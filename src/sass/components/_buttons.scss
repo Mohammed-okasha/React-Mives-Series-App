@@ -57,6 +57,7 @@
 .up_btn {
   position: fixed;
   bottom: 15px;
+  right: 15px;
   transform: translateX(-35px);
   @include rounded(35px);
   background-color: $red;
@@ -67,6 +68,6 @@
     bottom: 42px;
   }
   &.active {
-    transform: translateX(15px);
+    transform: translateX(-15px);
   }
 }
