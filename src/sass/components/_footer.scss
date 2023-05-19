@@ -1,0 +1,23 @@
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  background-color: $glass;
+  padding: calc($spacer * 1.25) 0;
+  @media (max-width: 767px) {
+    padding: calc($spacer * 1.25) 0 60px;
+  }
+  .row {
+    @include space-between;
+    gap: 0.5rem calc($spacer * 2);
+    flex-wrap: wrap;
+    .copyright {
+      color: $white;
+      font-size: 14px;
+      span {
+        color: $red;
+      }
+    }
+  }
+}

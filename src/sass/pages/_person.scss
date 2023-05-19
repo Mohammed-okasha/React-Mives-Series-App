@@ -1,0 +1,28 @@
+.person_detail {
+  padding: calc($spacer * 3) 0;
+  .row {
+    display: flex;
+    gap: 2rem;
+    color: #fff;
+    .image {
+      width: 20%;
+      .card_img {
+        width: 100%;
+        padding-top: 160%;
+      }
+    }
+
+    .info {
+      flex: 1 0 0;
+      .title {
+        margin-bottom: $spacer;
+      }
+    }
+    @media (max-width: 899px) {
+      flex-direction: column;
+      .image {
+        width: 50%;
+      }
+    }
+  }
+}

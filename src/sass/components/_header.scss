@@ -1,0 +1,96 @@
+#header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $spacer 0;
+  background-color: $glass;
+  z-index: 100;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .open_btn {
+    color: $white;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .navbar {
+    .nav_menu {
+      display: flex;
+      align-items: center;
+      gap: $spacer;
+      .nav_link {
+        display: inline-block;
+        padding: calc($spacer * 0.5) $spacer;
+        color: $white;
+        border-radius: 3px;
+        font: {
+          size: 14px;
+          weight: 600;
+        }
+        letter-spacing: 0.5px;
+        &:any-link:hover {
+          background-color: $red;
+        }
+      }
+    }
+    .close_btn {
+      display: none;
+    }
+  }
+
+  .header_buttons {
+    display: flex;
+    gap: calc($spacer * 0.75);
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      @include circle(35px);
+      &:last-of-type {
+        position: relative;
+        .total_fav_movies {
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $white;
+          color: $navy-blue;
+          text-align: center;
+          font-size: 13px;
+          @include circle(20px);
+          line-height: 23px;
+          vertical-align: middle;
+        }
+      }
+      &:hover,
+      &.active {
+        background-color: $red;
+      }
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // Responsive Header ====================
+  @include responsive_navbar;
+}
+
+.logo {
+  h1 {
+    font-family: Monoton, sans-serif;
+    text-transform: uppercase;
+    color: $red;
+  }
+}

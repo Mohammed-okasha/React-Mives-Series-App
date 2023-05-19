@@ -1,0 +1,31 @@
+.pagination_container {
+  @include centering;
+  .pagination {
+    @include centering;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    .page-item {
+      .page-link {
+        color: $white;
+        cursor: pointer;
+        svg {
+          vertical-align: middle;
+        }
+      }
+      &:not(.break) {
+        a {
+          display: inline-block;
+          padding: 6px calc($spacer * 0.75);
+          border: 1px solid $red;
+          font-size: 12px;
+          border-radius: 0.25rem;
+          transition: 0.3s ease-out;
+          &[rel="canonical"],
+          &:hover {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+}

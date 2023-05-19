@@ -1,0 +1,43 @@
+@use "sass:math";
+
+.search_wrapper {
+  padding: calc($spacer * 2) 0;
+
+  .search_tabs {
+    margin-bottom: calc($spacer * 1.25);
+    .tabs_list {
+      @include centering;
+      flex-wrap: wrap;
+      gap: $spacer;
+      li {
+        .tab_btn {
+          padding: calc($spacer * 0.5) calc($spacer * 1.25);
+          color: $white;
+          border-radius: 3px;
+          font-size: $spacer;
+          text-transform: uppercase;
+          &.active {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  .search_input {
+    input {
+      background-color: unset;
+      border: 1px solid $red;
+      color: $white;
+      padding: $spacer;
+      caret-color: $red;
+      border-radius: math.div($rounded, 4);
+      &::placeholder {
+        color: $darkgrey;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// Search Results

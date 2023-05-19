@@ -1,0 +1,138 @@
+@use "sass:math";
+
+.banner {
+  position: relative;
+  height: 80vh;
+  &::before {
+    @include overlay(rgba(0, 0, 0, 0.6));
+  }
+  .banner_backdrop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &.empty {
+      background-color: $red;
+      color: $white;
+      height: 100%;
+    }
+  }
+  .banner_wrapper {
+    @include banner_center;
+    height: 100%;
+  }
+}
+
+.banner,
+.details_banner {
+  .info {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    gap: calc($spacer * 1.25);
+    padding: calc($spacer * 1.5) 0;
+    > div {
+      display: flex;
+      align-items: center;
+      flex-flow: wrap;
+      gap: calc($spacer * 0.25);
+      span {
+        font-size: 14px;
+        color: $white;
+      }
+    }
+  }
+}
+//!=============================================================
+.sliders_banners {
+  height: 80vh;
+  @media (max-width: 767px) {
+    height: 40vh;
+  }
+  .hero_banner {
+    height: 100%;
+
+    .banner_content {
+      max-width: 500px;
+
+      .watch_link {
+        display: inline-block;
+        background-color: $red;
+        color: $white;
+        border-radius: 3px;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        @media (max-width: 767px) {
+          width: 140px;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}
+//!=============================================================
+// Details Banner
+.details_banner {
+  position: relative;
+  min-height: 80vh;
+  background-size: cover;
+  &::before {
+    @include overlay(rgba(0, 0, 0, 0.6));
+  }
+  &.empty {
+    background-color: $red;
+    color: $white;
+  }
+  .banner_wrapper {
+    position: relative;
+    min-height: 80vh;
+    padding: calc($spacer * 1.25) 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+  .banner_content {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    gap: calc($spacer * 2);
+    .poster {
+      max-width: 300px;
+      width: 100%;
+      border: $border;
+      border-radius: math.div($rounded, 4);
+      color: $white;
+    }
+    .details {
+      max-width: 700px;
+      width: 100%;
+      .description {
+        padding-top: $spacer;
+      }
+      .genres_list {
+        display: flex;
+        align-items: center;
+        flex-flow: wrap;
+        gap: calc($spacer * 0.75);
+        .genre_item {
+          background-color: $red;
+          color: $white;
+          font-size: 12px;
+          padding: 6px calc($spacer * 0.75);
+          border-radius: 0.25rem;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+      .poster {
+        max-width: 220px;
+      }
+    }
+  }
+}

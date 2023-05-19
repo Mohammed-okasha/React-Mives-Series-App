@@ -1,0 +1,28 @@
+// Variables
+@import "./utilities/variables";
+
+// Mixins & Utilities
+@import "./utilities/mixin";
+@import "./utilities/classes";
+
+// base And Layout
+@import "./base";
+
+// Components
+@import "./components/header";
+@import "./components/banners";
+@import "./components/buttons";
+@import "./components/card";
+@import "./components/form";
+@import "./components/grid-layout";
+@import "./components/modal";
+@import "./components/pagination";
+@import "./components/loading";
+@import "./components/footer";
+
+// Pages
+@import "./pages/details";
+@import "./pages/person";
+@import "./pages/search";
+@import "./pages/movies";
+@import "./pages/favorite";

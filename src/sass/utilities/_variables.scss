@@ -1,0 +1,33 @@
+// Colors
+$theme: #080a1a;
+$red: #f20000;
+$light: #d5d5d5;
+$darkgrey: darkgrey;
+$glass: #2b3156e0;
+$light-blue: #40487c;
+$blue-active: #4f5db7;
+$navy-blue: #0b0f29;
+$white: #fff;
+$card_overlay: linear-gradient(
+  360deg,
+  #161616d4 35%,
+  rgba(73, 73, 73, 0.23) 65%
+);
+
+// Fonts
+$base-font: 1rem;
+
+// Using Math in Sass And Make Different font sizes
+$font-sm: $base-font * 0.75;
+$font-lg: $base-font * 1.25;
+$font-xl: $base-font * 2;
+$font-xl: $base-font * 3;
+
+// Spacer(margin & Padding)
+$spacer: 1rem;
+
+// Borders
+$base_radius: 20px;
+$border: 1px solid rgba(192, 192, 192, 0.731);
+$rounded: $base_radius;
+$circle: 50%;

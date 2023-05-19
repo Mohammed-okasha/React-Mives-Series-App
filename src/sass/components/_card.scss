@@ -1,0 +1,73 @@
+@use "sass:math";
+
+// Card
+.card {
+  position: relative;
+  overflow: clip;
+  .card_img {
+    padding-top: 150%;
+  }
+  .favorite_actions {
+    position: absolute;
+    top: calc($spacer * 0.5);
+    right: calc($spacer * 0.5);
+    z-index: 2;
+    .add_btn {
+      @include rounded(30px);
+      background-color: rgb(43 49 86 / 65%);
+      border: 1px solid $red;
+      svg {
+        font-size: 1.5rem;
+        vertical-align: middle;
+        color: $white;
+      }
+      &.success {
+        background-color: $red;
+      }
+    }
+  }
+
+  .card_content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: $card_overlay;
+    display: flex;
+    align-items: flex-end;
+    transform: translateY(100%);
+    transition: 0.4s ease-out;
+    z-index: 1;
+    .info {
+      width: 100%;
+      text-align: center;
+      padding: calc($spacer * 0.5) calc($spacer * 0.5) calc($spacer * 0.75);
+      color: $white;
+      & :is(.title, .release_date) {
+        margin-bottom: calc($spacer * 0.5);
+      }
+      .release_date {
+        display: block;
+      }
+      .rating {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .card_content {
+      transform: translateY(0);
+    }
+  }
+}
+
+// ui_card
+.ui_card {
+  background-color: $theme;
+  border-radius: math.div($rounded, 2);
+  padding: calc($spacer * 2) $spacer;
+}

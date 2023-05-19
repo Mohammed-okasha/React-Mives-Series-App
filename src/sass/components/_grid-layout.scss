@@ -1,0 +1,15 @@
+.grid_layout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $spacer;
+  margin-bottom: calc($spacer * 2);
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 851px) and (max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1101px) and (max-width: 1199px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

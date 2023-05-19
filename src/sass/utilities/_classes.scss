@@ -1,0 +1,90 @@
+.custom_title {
+  width: fit-content;
+  border-bottom: 2px solid $red;
+  margin-bottom: calc($spacer * 1.25);
+  text-transform: uppercase;
+}
+
+.description {
+  color: $light;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.active_tab {
+  background-color: $red;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Section Title
+.section_title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  svg {
+    color: $red;
+    margin-right: 0.75rem;
+  }
+  .heading {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(
+      -225deg,
+      $red 0%,
+      $white 25%,
+      #6e3ca3 65%,
+      $red 100%
+    );
+    background-size: auto auto;
+    background-size: 200% auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textClip 2s linear infinite;
+  }
+}
+
+@include keyF(textClip) {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.card_img {
+  background-color: darkgray;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 120%;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  svg {
+    color: #f6ca2a;
+  }
+}
+
+// Error Element
+.error_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 1rem;
+  text-align: center;
+  h1 {
+    color: $red;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.01;
+  }
+
+  p {
+    color: #fff;
+  }
+}

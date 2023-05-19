@@ -1,0 +1,178 @@
+.details_root {
+  color: $white;
+}
+.details_root {
+  .details_tabs {
+    display: flex;
+    align-items: center;
+    gap: calc($spacer * 1.25);
+    margin-bottom: calc($spacer * 2);
+    padding-bottom: calc($spacer * 0.5);
+    border-bottom: 1px solid $white;
+    .tab_item {
+      .tab_link {
+        position: relative;
+        color: $white;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          opacity: 0;
+          background-color: $red;
+          transition: 0.3s ease-out;
+        }
+        &.active::after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Cast List & actor
+.actor {
+  display: block;
+  position: relative;
+  .name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $glass;
+    color: $white;
+    padding: $spacer;
+    text-align: center;
+  }
+}
+
+// Reviews List
+.reviews {
+  max-height: 500px;
+  overflow: auto;
+  @include scroll_bar("y");
+  .author {
+    display: flex;
+    gap: $spacer;
+    padding: $spacer;
+    transition: 0.3s ease-out;
+    &:hover {
+      background-color: rgba(32, 37, 66, 0.798);
+    }
+    .img {
+      @include circle(40px);
+      @include centering;
+      background-color: $red;
+    }
+    &:nth-child(even) {
+      .img {
+        background-color: #42775e;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 1.25rem;
+    }
+
+    .review_details {
+      flex: 1 0 0;
+      & :is(.name, .date) {
+        font-size: 14px;
+      }
+      .date {
+        padding: calc($spacer * 0.5) 0;
+      }
+      .description {
+        font-size: 12px;
+        word-break: break-all;
+        .read_btn {
+          color: $red;
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
+}
+
+// More Details
+.more_details {
+  .detail_item {
+    .custom_title {
+      margin-bottom: 0.5rem;
+    }
+    .text,
+    .name {
+      font-size: 14px;
+    }
+    .companies_list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: calc($spacer * 1.5);
+      margin-top: calc($spacer * 1.25);
+      .company {
+        .info {
+          .logo {
+            @include circle(90px);
+            outline: 2px solid $white;
+            background-color: $white;
+          }
+          .name {
+            width: 130px;
+
+            margin-top: $spacer;
+          }
+        }
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: $spacer;
+    }
+  }
+}
+
+.videos,
+.backdrops {
+  .swiper {
+    padding-bottom: calc($spacer * 3);
+  }
+}
+
+// Videos Section
+.videos {
+  .video_item {
+    iframe {
+      border: none;
+      height: 500px;
+      @media (max-width: 767px) {
+        height: 300px;
+      }
+    }
+  }
+}
+
+// Backdrops Section
+.backdrops {
+  .backdrop_item {
+    img {
+      width: 100%;
+      object-fit: cover;
+      max-height: 500px;
+      height: 100%;
+    }
+  }
+}
+
+// Posters Section
+.posters {
+  .poster_item {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

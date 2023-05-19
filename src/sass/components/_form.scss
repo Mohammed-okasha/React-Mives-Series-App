@@ -1,0 +1,63 @@
+.form_control {
+  .input {
+    background-color: $white;
+    border: none;
+    border-radius: calc($rounded / 4);
+    padding: 0.5rem 0.75rem;
+    caret-color: $red;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      text-transform: capitalize;
+    }
+    &.invalid {
+      border: 2px solid $red;
+    }
+  }
+
+  .error_msg {
+    color: $red;
+    font-size: 13px;
+    padding-top: 0.25rem;
+  }
+}
+
+.auth_form {
+  color: $white;
+  .form_title {
+    color: $red;
+    text-align: center;
+    margin-bottom: calc($spacer * 1.25);
+  }
+
+  .form_control {
+    margin-bottom: calc($spacer * 1.25);
+  }
+
+  .auth_status_mode {
+    margin-bottom: $spacer;
+    font-size: 14px;
+    .toggle {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Account
+.user_account {
+  text-align: center;
+  .icon {
+    color: $red;
+    font-size: 3rem;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  .email {
+    padding: $spacer 0;
+  }
+}

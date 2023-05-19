@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: $red;
+  color: $white;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Monoton:regular);
+
+body {
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  background-color: $theme;
+  & :is(h1, h2, h3, h4, h5, h6) {
+    color: $white;
+    overflow-wrap: break-word;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+$mod_1: 1; // mobile
+$mod_2: 1.2; // desktop
+
+h1 {
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $mod_1 * 20px,
+    $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
+  line-height: 2.2rem;
+}
+h2 {
+  font-size: $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
+}
+h3 {
+  font-size: $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $min_font
+  );
+}
+h4 {
+  font-size: $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    0.75 * $min_font,
+    $mod_1 * $min_font
+  );
+}
+
+section:not(:first-of-type) {
+  padding: 2rem 0;
+}
+
+section:last-of-type {
+  margin-bottom: 116px;
+  @media (max-width: 450px) {
+    margin-bottom: 140px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  user-select: none;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  border-radius: $rounded;
+  box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.5) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $red;
+  border-radius: $rounded;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+input,
+textarea,
+button,
+a {
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  background-color: unset;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+//=================================================
+.swiper {
+  height: 100%;
+
+  & :is(.swiper-button-prev, .swiper-button-next) {
+    color: $white;
+    height: 40px;
+    width: 30px;
+    &::after {
+      font-size: 2rem;
+    }
+  }
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background-color: $white;
+      opacity: 0.4;
+      width: 0.5rem;
+      height: 0.5rem;
+      &.swiper-pagination-bullet-active {
+        background-color: $red;
+        opacity: 1;
+      }
+    }
+  }
+}
