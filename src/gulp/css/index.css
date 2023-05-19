@@ -666,7 +666,8 @@ button {
 .up_btn {
   position: fixed;
   bottom: 15px;
-  transform: translateX(-35px);
+  right: 15px;
+  transform: translateX(50px);
   width: 35px;
   height: 35px;
   border-radius: 5px;
@@ -681,7 +682,7 @@ button {
   }
 }
 .up_btn.active {
-  transform: translateX(15px);
+  transform: translateX(-15px);
 }
 
 .card {
