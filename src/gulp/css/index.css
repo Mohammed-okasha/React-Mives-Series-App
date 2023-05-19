@@ -675,6 +675,11 @@ button {
   transition: 0.3s ease-out;
   z-index: 200;
 }
+@media (max-width: 767px) {
+  .up_btn {
+    bottom: 42px;
+  }
+}
 .up_btn.active {
   transform: translateX(15px);
 }

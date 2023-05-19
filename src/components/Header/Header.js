@@ -31,11 +31,8 @@ const Header = () => {
   const closeNavbarHandler = useCallback(() => setNavBarIsOpen(false), []);
 
   useEffect(() => {
-    const locations = ["/", "/movies", "/tvSeries"];
-
-    if (locations.includes(location.pathname)) {
+    if (!location.pathname.includes("search")) {
       window.scrollTo({ top: 0, behavior: "smooth" });
-
       setNavBarIsOpen(false);
     }
   }, [location.pathname]);

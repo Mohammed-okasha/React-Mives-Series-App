@@ -63,6 +63,9 @@
   color: $white;
   transition: 0.3s ease-out;
   z-index: 200;
+  @media (max-width: 767px) {
+    bottom: 42px;
+  }
   &.active {
     transform: translateX(15px);
   }

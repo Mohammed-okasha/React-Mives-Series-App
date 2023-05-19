@@ -27,6 +27,7 @@ const authSlice = createSlice({
       state.userName = null;
       state.userEmail = null;
       state.isLoggedIn = false;
+      state.isSignInMode = true;
     },
   },
 });
