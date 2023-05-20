@@ -113,7 +113,7 @@ html {
 
 h1 {
   font-size: 1rem;
-  line-height: 2.2rem;
+  line-height: 2rem;
 }
 h1 {
   font-size: 20px;
@@ -365,6 +365,13 @@ button {
 #header .header_buttons .btn:hover, #header .header_buttons .btn.active {
   background-color: #f20000;
 }
+#header .header_buttons .btn.user_account .userName {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  border: 1px solid #fff;
+}
 #header .header_buttons .btn svg {
   font-size: 1.5rem;
 }
@@ -483,7 +490,7 @@ button {
   align-items: center;
   flex-flow: wrap;
   gap: 1.25rem;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 .banner .info > div,
 .details_banner .info > div {

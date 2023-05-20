@@ -26,7 +26,7 @@ const HeaderButtons = (props) => {
         <BiSearch />
       </NavLink>
       <button
-        className={`btn ${props.isLoggedIn ? "active" : ""}`}
+        className="btn user_account"
         title="account"
         onClick={props.onOpenAuthModal}
       >

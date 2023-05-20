@@ -77,6 +77,13 @@
       &.active {
         background-color: $red;
       }
+      &.user_account {
+        .userName {
+          @include circle(30px);
+          line-height: 30px;
+          border: 1px solid $white;
+        }
+      }
       svg {
         font-size: 1.5rem;
       }

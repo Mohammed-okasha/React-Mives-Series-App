@@ -35,7 +35,7 @@ const BannerContent = ({ movie }) => {
       />
       <div className="details">
         <h1 className="title">{movie.title || movie.name}</h1>
-        <p className="description">{movie.overview}</p>
+        {movie.overview && <p className="description">{movie.overview}</p>}
         <div className="info">
           <div>
             <FaCalendar color="#f20000" />
